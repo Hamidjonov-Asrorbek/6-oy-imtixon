@@ -1,6 +1,6 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -21,7 +21,8 @@ import { Dashboard, DashboardCustomize, Home } from "@mui/icons-material";
 import { CgInsights } from "react-icons/cg";
 import { IoIosDocument } from "react-icons/io";
 import { FaRocket } from "react-icons/fa";
-import ProductCreate from "../ProductCreate";
+import ProductCreate from "../Product";
+import { Avatar } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -134,6 +135,7 @@ export default function MiniDrawer() {
       handleCloseUserMenu();
     }
   };
+  const user = JSON.parse(localStorage.getItem("user"));
 
   return (
     <Box
@@ -160,12 +162,28 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
+            <NavLink>Pages / Dashboard</NavLink>
           </Typography>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
+          <div
+            className="avatar"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              marginRight: "auto",
+            }}
+          >
+            <Avatar
+              alt={user.name}
+              src={user.avatar}
+              sx={{ width: 40, height: 40 }}
+            />
+            <Typography textAlign="center">{user.name}</Typography>
+          </div>
           <IconButton onClick={handleDrawerClose} sx={{ color: "#fff" }}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
