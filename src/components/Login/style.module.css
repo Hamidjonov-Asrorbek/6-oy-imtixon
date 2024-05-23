@@ -1,0 +1,52 @@
+.login {
+  /* padding: 15px; */
+  color: #fff;
+}
+.login_page form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.login input {
+  width: 350px;
+}
+.sign_up {
+  cursor: pointer;
+  text-align: center;
+  font-family: "Poppins";
+  color: #a0aec0;
+}
+.sign_up_span {
+  color: #fff;
+}
+.passShow {
+  position: relative;
+  display: flex;
+}
+.pass_icon {
+  font-size: 25px;
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  cursor: pointer;
+}
+.section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+}
+.login_page {
+  width: 350px;
+  border: none;
+  height: 460px;
+  margin: 0 auto;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 10px;
+}
