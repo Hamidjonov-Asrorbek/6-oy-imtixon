@@ -10,6 +10,7 @@ import "./App.css";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import Layout from "./components/Layout";
+import Products from "./components/Products";
 
 function App() {
   function Redirect({ children }) {
@@ -32,8 +33,8 @@ function App() {
         ></Route>
 
         <Route path="/signup" element={<SignUp />}></Route>
-
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/products" element={<Products />}></Route>
       </>
     )
   );

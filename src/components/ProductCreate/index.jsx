@@ -1,21 +1,6 @@
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  Switch,
-  TextField,
-} from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
-import {
-  passShow,
-  pass_icon,
-  section,
-  login_page,
-  sign_up_span,
-  sign_up,
-} from "./style.module.css";
+import { section, login_page } from "./style.module.css";
 import { useNavigate } from "react-router-dom";
 function ProductCreate() {
   const navigate = useNavigate();
@@ -32,11 +17,11 @@ function ProductCreate() {
     const product = JSON.parse(localStorage.getItem("products")) ?? [];
     setproductsInfo((...prev) => ({
       ...prev,
-      name: productsInfo.name,
-      category: productsInfo.category,
-      price: productsInfo.price,
-      link: productsInfo.link,
-      desc: productsInfo.desc,
+      name: "",
+      category: "",
+      price: "",
+      link: "",
+      desc: "",
     }));
     try {
       const req = await fetch("https://api.escuelajs.co/api/v1/products", {

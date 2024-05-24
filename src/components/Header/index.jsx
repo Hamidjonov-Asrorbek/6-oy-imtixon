@@ -21,7 +21,7 @@ import { Dashboard, DashboardCustomize, Home } from "@mui/icons-material";
 import { CgInsights } from "react-icons/cg";
 import { IoIosDocument } from "react-icons/io";
 import { FaRocket } from "react-icons/fa";
-import ProductCreate from "../Product";
+import ProductCreate from "../ProductCreate";
 import { Avatar } from "@mui/material";
 
 const drawerWidth = 240;
@@ -127,11 +127,9 @@ export default function MiniDrawer() {
       navigate("/signup");
     } else if (setting === "Dashboard") {
       navigate("/layout");
-    }
-    // else if (setting === "Products") {
-    //   navigate("/products");
-    // }
-    else {
+    } else if (setting === "Products") {
+      navigate("/products");
+    } else {
       handleCloseUserMenu();
     }
   };
@@ -235,9 +233,11 @@ export default function MiniDrawer() {
         sx={{ flexGrow: 1, p: 3, color: "#fff", backgroundColor: "#0f123b" }}
       >
         <DrawerHeader />
-        <Typography paragraph>
-          <ProductCreate />
-        </Typography>
+        <main>
+          <Typography paragraph>
+            <ProductCreate />
+          </Typography>
+        </main>
       </Box>
     </Box>
   );
